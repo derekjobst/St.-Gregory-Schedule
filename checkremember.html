@@ -1,0 +1,30 @@
+<!-- Created by Derek Jobst on 2/27/13 -->
+
+<html>
+
+<body>
+	<form id="loginForm" method="post" action="checklogin.php">
+		<input id="usernameInput" name="username" type="hidden" class="loginText" placeholder="user@stgregoryschool.org" oninput="shortcut()">
+		<input id="passwordInput" name="password" type="hidden" class="loginText" placeholder="password" onfocus="append()">
+	</form>
+</body>
+
+<script type="text/javascript">
+
+if(localStorage.username!=null && localStorage.username!=''){
+	document.getElementById("usernameInput").value = localStorage.username;
+	
+	if(localStorage.password!=null && localStorage.password!=''){
+		document.getElementById("passwordInput").value = localStorage.password;
+		document.getElementById("loginForm").submit();
+	}
+	
+}
+else{
+	
+	window.location = "login.php";
+}
+
+</script>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<!-- Created by Derek Jobst on 2/10/13 -->
+
+<html>
+<head>
+<title>Set Schedule Data</title>
+
+
+
+
+
+<style type="text/css">
+
+body{
+	
+	background-image: url("http://server.derekjobst.com/resources/backgrounds/pattern_115.png"); 
+
+	
+	font-family: HelveticaNeueLight;
+	font-size: 16px;
+	
+	
+}
+
+#title{
+	
+	height: 80px;
+/* 	border: 1px solid black; */
+	
+	text-align: center;
+	font-family: "HelveticaNeueLight";
+	font-size: 60px;
+	color: rgba(63,63,63,1);
+	
+	
+}
+
+#wrapper{
+	
+	width: 675px;
+	height: inherit;
+	background-color: red;
+	margin: 30px auto 0px auto;
+	padding: 30px 50px;
+	
+	background-color: rgb(235,235,235);
+	border: 1px solid #ffffff;
+	border-radius: 8px;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+	
+	background-color: #f4f4f4;
+	background-image: -webkit-gradient(radial, 50% 100%,100,50% -50%,100, from(rgb(234, 234, 234)), to(rgb(255, 255, 255)));
+background-image: -webkit-radial-gradient(50% 0%, rgb(255, 255, 255), rgb(234, 234, 234));
+background-image: -moz-radial-gradient(50% 0%, rgb(255, 255, 255), rgb(234, 234, 234));
+background-image: radial-gradient(50% 0%, rgb(255, 255, 255), rgb(234, 234, 234));
+	
+	
+}
+
+.customButton{
+	border: 1px solid #838383;
+	border-radius: 5px;
+	
+	background-color: #f3f2f5;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(254, 252, 255)), to(rgb(233, 232, 235)));
+	background-image: -webkit-linear-gradient(top, rgb(254, 252, 255), rgb(233, 232, 235));
+	background-image: -moz-linear-gradient(top, rgb(254, 252, 255), rgb(233, 232, 235));
+	background-image: linear-gradient(top, rgb(254, 252, 255), rgb(233, 232, 235));
+
+	font-family: "HelveticaNeueLight", sans-serif;
+	font-size: 12px;
+	color: #6b6b6b;
+	padding-top: 2px;
+}
+
+.customButton:active{
+	
+	box-shadow:inset 0px 0px 5px rgba(0,0,0,0.25);
+	
+	
+	
+}
+.customButton:hover{
+	
+	border-color: #bdbdbd;
+	
+}
+
+#buttonsDiv{
+	margin: 0px;
+	text-align: center;
+	
+}
+
+@font-face {
+	font-family: HelveticaNeueLight;
+	src: url('http://server.derekjobst.com/resources/helveticaNeue/HelveticaNeueLight.ttf');
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="title">
+				<img src="resources/edit_classes_title.png">			
+</div>
+
+
+<p><b>Tips:</b><br>- Maximum 18 characters per class name<br>- Leave the space empty for free blocks<br>- Be sure to include http:// in the URL or it will not work</p>
+
+A Block: <input type="textBox" id="a" maxlength="18">
+<select id="aImage" onchange="changeImage('aPreview','aImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="aPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="aURL">
+<br>
+
+B Block: <input type="textBox" id="b" maxlength="18">
+<select id="bImage" onchange="changeImage('bPreview','bImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="bPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="bURL">
+<br>
+
+C Block: <input type="textBox" id="c" maxlength="18">
+<select id="cImage" onchange="changeImage('cPreview','cImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="cPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="cURL">
+<br>
+
+D Block: <input type="textBox" id="d" maxlength="18">
+<select id="dImage" onchange="changeImage('dPreview','dImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="dPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="dURL">
+<br>
+
+<br>
+E Block: <input type="textBox" id="e" maxlength="18">
+<select id="eImage" onchange="changeImage('ePreview','eImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="ePreview" width="30px" align="top">
+URL: <input type="text" size="50" id="eURL">
+<br>
+
+F Block: <input type="textBox" id="f" maxlength="18">
+<select id="fImage" onchange="changeImage('fPreview','fImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="fPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="fURL">
+<br>
+
+G Block: <input type="textBox" id="g" maxlength="18">
+<select id="gImage" onchange="changeImage('gPreview','gImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="gPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="gURL">
+<br>
+
+H Block: <input type="textBox" id="h" maxlength="18">
+<select id="hImage" onchange="changeImage('hPreview','hImage')">
+	<option  value="default" disabled="yes" selected="selected">Select Color</option>
+	<option value="aluminum">Aluminum</option>
+	<option value="aquamarine">Aquamarine</option>
+	<option value="burgundy">Burgundy</option>
+	<option value="cappuccino">Cappuccino</option>
+	<option value="cerise">Cerise</option>
+	<option value="cerulean">Cerulean</option>
+	<option value="lavender">Lavender</option>
+	<option value="midnight">Midnight</option>
+	<option value="spring">Spring</option>
+	<option value="sunglow">Sunglow</option>
+	<option value="forest">Forest</option>
+	<option value="florida">Florida</option>
+	<option value="">None</option>
+</select>
+<img id="hPreview" width="30px" align="top">
+URL: <input type="text" size="50" id="hURL">
+<br>
+
+<br>
+		<div id="buttonsDiv">
+<input type="button" id="submit" class="customButton" value="Save Data" onclick="storeInformation()">
+		</div>
+</div>
+
+</body>
+<script type="text/javascript">
+
+if(localStorage.aURL != null){document.getElementById("a").value = localStorage.ablock;}
+if(localStorage.aURL != null){document.getElementById("b").value = localStorage.bblock;}
+if(localStorage.aURL != null){document.getElementById("c").value = localStorage.cblock;}
+if(localStorage.aURL != null){document.getElementById("d").value = localStorage.dblock;}
+if(localStorage.aURL != null){document.getElementById("e").value = localStorage.eblock;}
+if(localStorage.aURL != null){document.getElementById("f").value = localStorage.fblock;}
+if(localStorage.aURL != null){document.getElementById("g").value = localStorage.gblock;}
+if(localStorage.aURL != null){document.getElementById("h").value = localStorage.hblock;}
+
+if(localStorage.aURL != null){document.getElementById("aImage").value = localStorage.aImage;}
+if(localStorage.aURL != null){document.getElementById("bImage").value = localStorage.bImage;}
+if(localStorage.aURL != null){document.getElementById("cImage").value = localStorage.cImage;}
+if(localStorage.aURL != null){document.getElementById("dImage").value = localStorage.dImage;}
+if(localStorage.aURL != null){document.getElementById("eImage").value = localStorage.eImage;}
+if(localStorage.aURL != null){document.getElementById("fImage").value = localStorage.fImage;}
+if(localStorage.aURL != null){document.getElementById("gImage").value = localStorage.gImage;}
+if(localStorage.aURL != null){document.getElementById("hImage").value = localStorage.hImage;}
+
+if(localStorage.aURL != null){document.getElementById("aURL").value = localStorage.aURL;}
+if(localStorage.aURL != null){document.getElementById("bURL").value = localStorage.bURL;}
+if(localStorage.aURL != null){document.getElementById("cURL").value = localStorage.cURL;}
+if(localStorage.aURL != null){document.getElementById("dURL").value = localStorage.dURL;}
+if(localStorage.aURL != null){document.getElementById("eURL").value = localStorage.eURL;}
+if(localStorage.aURL != null){document.getElementById("fURL").value = localStorage.fURL;}
+if(localStorage.aURL != null){document.getElementById("gURL").value = localStorage.gURL;}
+if(localStorage.aURL != null){document.getElementById("hURL").value = localStorage.hURL;}
+
+
+if(document.getElementById('aImage').value !== ""){document.getElementById("aPreview").src="resources/classic/" + document.getElementById('aImage').value + ".png";}
+
+if(document.getElementById('bImage').value !== ""){document.getElementById("bPreview").src="resources/classic/" + document.getElementById('bImage').value + ".png";}
+
+if(document.getElementById('cImage').value !== ""){document.getElementById("cPreview").src="resources/classic/" + document.getElementById('cImage').value + ".png";}
+
+if(document.getElementById('dImage').value !== ""){document.getElementById("dPreview").src="resources/classic/" + document.getElementById('dImage').value + ".png";}
+
+if(document.getElementById('eImage').value !== ""){document.getElementById("ePreview").src="resources/classic/" + document.getElementById('eImage').value + ".png";}
+
+if(document.getElementById('fImage').value !== ""){document.getElementById("fPreview").src="resources/classic/" + document.getElementById('fImage').value + ".png";}
+
+if(document.getElementById('gImage').value !== ""){document.getElementById("gPreview").src="resources/classic/" + document.getElementById('gImage').value + ".png";}
+
+if(document.getElementById('hImage').value !== ""){document.getElementById("hPreview").src="resources/classic/" + document.getElementById('hImage').value + ".png";}
+
+
+
+
+
+function storeInformation() { 
+
+	if(typeof(Storage)=="undefined"){alert("Your browser does not support the modern web standard in use in this site. Please update to a modern browser.")}
+	
+	
+	localStorage.ablock = document.getElementById("a").value;
+	localStorage.bblock = document.getElementById("b").value;
+	localStorage.cblock = document.getElementById("c").value;
+	localStorage.dblock = document.getElementById("d").value;
+	
+	localStorage.eblock = document.getElementById("e").value;
+	localStorage.fblock = document.getElementById("f").value;
+	localStorage.gblock = document.getElementById("g").value;
+	localStorage.hblock = document.getElementById("h").value;
+	
+	
+	localStorage.aImage = document.getElementById("aImage").value;
+	localStorage.bImage = document.getElementById("bImage").value;
+	localStorage.cImage = document.getElementById("cImage").value;
+	localStorage.dImage = document.getElementById("dImage").value;
+	
+	localStorage.eImage = document.getElementById("eImage").value;
+	localStorage.fImage = document.getElementById("fImage").value;
+	localStorage.gImage = document.getElementById("gImage").value;
+	localStorage.hImage = document.getElementById("hImage").value;
+	
+	
+	localStorage.aURL = document.getElementById("aURL").value;
+	localStorage.bURL = document.getElementById("bURL").value;
+	localStorage.cURL = document.getElementById("cURL").value;
+	localStorage.dURL = document.getElementById("dURL").value;
+	
+	localStorage.eURL = document.getElementById("eURL").value;
+	localStorage.fURL = document.getElementById("fURL").value;
+	localStorage.gURL = document.getElementById("gURL").value;
+	localStorage.hURL = document.getElementById("hURL").value;
+
+	
+	/* alert("Data saved successfully"); */
+	
+	localStorage.datasetup = "true";
+
+
+	location.href = 'http://schedule.derekjobst.com/classic.html';
+ }
+
+function changeImage(imgID, selectorID) { 
+
+if(document.getElementById(selectorID).value==""){
+	
+	document.getElementById(imgID).src="resources/classic/blank.png";
+}
+else{
+
+document.getElementById(imgID).src="resources/classic/" + document.getElementById(selectorID).value + ".png";
+
+}
+
+}
+ 
+
+</script>
+
+
+
+
+
+</html>
