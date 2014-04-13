@@ -26,8 +26,8 @@ else{
 	VALUES ('$username', '$encryptedPass', '$timestamp', '1')");
 	 
 	session_start();
-	session_register("username");
-	session_register("firstname");
+	$_SESSION["username"] = $username;
+	$_SESSION["firstname"] = $firstname;
 
 	header("location:setup.php");
 
