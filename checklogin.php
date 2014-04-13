@@ -16,14 +16,13 @@ $count=mysql_num_rows($userdata);
 if($count==1){
 	
 	session_start();
-	session_register("username");
-	
+
 	$firstname = mysql_result($userdata,0,'firstname');
 	
-	session_register("firstname");
-	session_register("username");
-	session_register("password");
-	session_register("remember");
+	$_SESSION["username"] = $username;
+	$_SESSION["firstname"] = $firstname;
+	$_SESSION["password"] = $password;
+	$_SESSION["remember"] = $remember;
 
 	header("location:index.php");
 	
