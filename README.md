@@ -1,4 +1,4 @@
-St.-Gregory-Schedule
+St. Gregory Schedule
 ====================
 
 Schedule and Homework website for St. Gregory College Preparatory
